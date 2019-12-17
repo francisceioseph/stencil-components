@@ -1,0 +1,19 @@
+button {
+  background-color: var(--background-color, #3498db);
+  border: none;
+  color: var(--color, white);
+  text-align: center;
+  padding: 8px;
+}
+
+button.clear {
+  background-color: transparent;
+  color: black;
+}
+
+button.outlined {
+  background-color: transparent;
+  color: black;
+  border: solid 1px;
+  border-color: #3498db;
+}

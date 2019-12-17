@@ -10,7 +10,10 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface FLink {
+  interface FzButton {
+    'upper': boolean;
+  }
+  interface FzLink {
     'href': string;
     'target': string;
   }
@@ -19,24 +22,35 @@ export namespace Components {
 declare global {
 
 
-  interface HTMLFLinkElement extends Components.FLink, HTMLStencilElement {}
-  var HTMLFLinkElement: {
-    prototype: HTMLFLinkElement;
-    new (): HTMLFLinkElement;
+  interface HTMLFzButtonElement extends Components.FzButton, HTMLStencilElement {}
+  var HTMLFzButtonElement: {
+    prototype: HTMLFzButtonElement;
+    new (): HTMLFzButtonElement;
+  };
+
+  interface HTMLFzLinkElement extends Components.FzLink, HTMLStencilElement {}
+  var HTMLFzLinkElement: {
+    prototype: HTMLFzLinkElement;
+    new (): HTMLFzLinkElement;
   };
   interface HTMLElementTagNameMap {
-    'f-link': HTMLFLinkElement;
+    'fz-button': HTMLFzButtonElement;
+    'fz-link': HTMLFzLinkElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface FLink {
+  interface FzButton {
+    'upper'?: boolean;
+  }
+  interface FzLink {
     'href'?: string;
     'target'?: string;
   }
 
   interface IntrinsicElements {
-    'f-link': FLink;
+    'fz-button': FzButton;
+    'fz-link': FzLink;
   }
 }
 
@@ -46,7 +60,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'f-link': LocalJSX.FLink & JSXBase.HTMLAttributes<HTMLFLinkElement>;
+      'fz-button': LocalJSX.FzButton & JSXBase.HTMLAttributes<HTMLFzButtonElement>;
+      'fz-link': LocalJSX.FzLink & JSXBase.HTMLAttributes<HTMLFzLinkElement>;
     }
   }
 }

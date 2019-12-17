@@ -1,7 +1,7 @@
 import { Component, h, Prop } from "@stencil/core";
 
 @Component({
-  tag: "f-link",
+  tag: "fz-link",
   styleUrl: "link.css",
   shadow: true
 })
