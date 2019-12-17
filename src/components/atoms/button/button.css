@@ -1,19 +1,21 @@
 :host button {
-  background-color: var(--background-color, #3498db);
-  border: none;
-  color: var(--color, white);
-  text-align: center;
+  background-color: var(--background-color, #00868b);
+  color: var(--text-color, white);
+
   padding: 8px;
+  border: none;
 }
 
 :host button.clear {
-  background-color: transparent;
-  color: black;
+  background-color: var(--text-color, transparent);
+  color: var(--background-color, #00868b);
+  font-weight: bold;
+  border: none;
 }
 
 :host button.outlined {
-  background-color: transparent;
-  color: black;
-  border: solid 1px;
-  border-color: #3498db;
+  background-color: var(--text-color, transparent);
+  color: var(--background-color, #00868b);
+  border: 1px solid var(--background-color, #00868b);
+  font-weight: bold;
 }

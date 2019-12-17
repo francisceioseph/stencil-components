@@ -11,7 +11,7 @@
 }
 
 ::slotted(button[active]) {
-  background-color: var(--text-color, white);
+  background-color: var(--text-color, transparent);
   color: var(--background-color, #00868b);
   border: 1px solid var(--background-color, #00868b);
   font-weight: bold;
