@@ -10,24 +10,22 @@
 
     <script type="module" src="/build/osf-components.esm.js"></script>
     <script nomodule src="/build/osf-components.js"></script>
-
-    <script>
-      function onButtonClick(event) {
-        console.log(event);
-      }
-    </script>
   </head>
   <body>
     <fz-link href="http://www.youtube.com" target="_">
       Youtube
     </fz-link>
 
-    <fz-button onclick="onButtonClick(event)">
+    <fz-button disabled="true">
       Click me
     </fz-button>
 
-    <fz-button onclick="onButtonClick(event)" upper>
+    <fz-button id="fzButton2" upper>
       Click me
     </fz-button>
   </body>
+  <script>
+    const fzBtn = document.getElementById("fzButton2");
+    fzBtn.addEventListener("clickButton", console.log);
+  </script>
 </html>

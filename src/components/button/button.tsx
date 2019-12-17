@@ -1,4 +1,4 @@
-import { Component, h, Prop } from "@stencil/core";
+import { Component, h, Prop, EventEmitter, Event } from "@stencil/core";
 
 @Component({
   tag: "fz-button",
@@ -9,20 +9,34 @@ export class Button {
   @Prop()
   public upper = false;
 
-  private get buttonStyle() {
-    const textTransform = this.upper ? "uppercase" : "initial";
+  @Prop()
+  public disabled = false;
 
-    return {
-      textTransform
-    };
-  }
+  @Event({
+    eventName: "clickButton",
+    bubbles: false
+  })
+  public clickButton: EventEmitter;
 
-  public;
   render() {
     return (
-      <button style={this.buttonStyle}>
+      <button
+        onClick={this.clickButtonHandler}
+        style={this.buttonStyle}
+        disabled={this.disabled}
+      >
         <slot></slot>
       </button>
     );
+  }
+
+  private clickButtonHandler = (event: MouseEvent) => {
+    this.clickButton.emit(event);
+  };
+
+  private get buttonStyle() {
+    return {
+      textTransform: this.upper ? "uppercase" : "initial"
+    };
   }
 }

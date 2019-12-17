@@ -11,6 +11,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface FzButton {
+    'disabled': boolean;
     'upper': boolean;
   }
   interface FzLink {
@@ -41,6 +42,8 @@ declare global {
 
 declare namespace LocalJSX {
   interface FzButton {
+    'disabled'?: boolean;
+    'onClickButton'?: (event: CustomEvent<any>) => void;
     'upper'?: boolean;
   }
   interface FzLink {
