@@ -18,6 +18,10 @@ export namespace Components {
     'href': string;
     'target': string;
   }
+  interface FzSegementButton {
+    'activeIndex': number;
+    'disabled': boolean;
+  }
 }
 
 declare global {
@@ -34,9 +38,16 @@ declare global {
     prototype: HTMLFzLinkElement;
     new (): HTMLFzLinkElement;
   };
+
+  interface HTMLFzSegementButtonElement extends Components.FzSegementButton, HTMLStencilElement {}
+  var HTMLFzSegementButtonElement: {
+    prototype: HTMLFzSegementButtonElement;
+    new (): HTMLFzSegementButtonElement;
+  };
   interface HTMLElementTagNameMap {
     'fz-button': HTMLFzButtonElement;
     'fz-link': HTMLFzLinkElement;
+    'fz-segement-button': HTMLFzSegementButtonElement;
   }
 }
 
@@ -50,10 +61,16 @@ declare namespace LocalJSX {
     'href'?: string;
     'target'?: string;
   }
+  interface FzSegementButton {
+    'activeIndex'?: number;
+    'disabled'?: boolean;
+    'onActiveIndexChange'?: (event: CustomEvent<any>) => void;
+  }
 
   interface IntrinsicElements {
     'fz-button': FzButton;
     'fz-link': FzLink;
+    'fz-segement-button': FzSegementButton;
   }
 }
 
@@ -65,6 +82,7 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'fz-button': LocalJSX.FzButton & JSXBase.HTMLAttributes<HTMLFzButtonElement>;
       'fz-link': LocalJSX.FzLink & JSXBase.HTMLAttributes<HTMLFzLinkElement>;
+      'fz-segement-button': LocalJSX.FzSegementButton & JSXBase.HTMLAttributes<HTMLFzSegementButtonElement>;
     }
   }
 }

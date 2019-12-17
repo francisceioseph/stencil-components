@@ -1,0 +1,18 @@
+:host {
+  display: block;
+}
+
+::slotted(button) {
+  background-color: var(--background-color, #00868b);
+  color: var(--text-color, white);
+
+  padding: 8px;
+  border: none;
+}
+
+::slotted(button[active]) {
+  background-color: var(--text-color, white);
+  color: var(--background-color, #00868b);
+  border: 1px solid var(--background-color, #00868b);
+  font-weight: bold;
+}

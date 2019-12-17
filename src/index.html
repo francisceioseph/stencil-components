@@ -23,9 +23,20 @@
     <fz-button id="fzButton2" upper>
       Click me
     </fz-button>
+
+    <fz-segement-button id="fzSegmentedButton" style="margin-top: 20px;">
+      <button>Hello 1</button>
+      <button>Hello 2</button>
+      <button>Hello 3</button>
+    </fz-segement-button>
   </body>
   <script>
     const fzBtn = document.getElementById("fzButton2");
     fzBtn.addEventListener("clickButton", console.log);
+
+    const fzSegBtn = document.getElementById("fzSegmentedButton");
+    fzSegBtn.addEventListener("activeIndexChange", event =>
+      console.log(event.detail)
+    );
   </script>
 </html>
